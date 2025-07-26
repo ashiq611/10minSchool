@@ -14,9 +14,9 @@ function Instructor({ instructor }: { instructor: { values: Array<{ name: string
         className="rounded-full"
       />
       <div>
-        <Link href="https://10minuteschool.com/skills/instructors/munzereen-shahid/" className="font-semibold">{name}</Link>
+        <Link href="https://10minuteschool.com/skills/instructors/munzereen-shahid/" className="font-semibold text-xl hover:text-green-500">{name} <span>{'>'}</span></Link>
         <div
-  className="text-sm text-gray-400"
+  className="text-md text-gray-400"
   dangerouslySetInnerHTML={{ __html: description }}
 />
       </div>
