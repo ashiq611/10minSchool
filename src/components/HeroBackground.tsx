@@ -15,7 +15,7 @@ export default function HeroBackground({ title, description, media }: {
 }) {
   return (
     <div className="bg-[#020314] text-white py-10">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-8 relative">
+      <div className="max-w-7xl mx-auto px-4 py-24 flex flex-col md:flex-row gap-8 relative">
         {/* Course Info */}
         <div className="md:w-2/3">
           <h1 className="text-4xl font-bold mb-2">{title}</h1>
@@ -29,7 +29,7 @@ export default function HeroBackground({ title, description, media }: {
         </div>
 
         {/* Course Preview and Price */}
-        <div className="md:w-1/3 bg-white text-black p-4 rounded-lg shadow md:absolute md:top-0 md:right-0">
+        <div className="md:w-1/3 bg-white text-black p-2 rounded-lg shadow md:absolute md:top-0 md:right-0">
 
           <div className="carousel w-full">
             {media.map((item:{

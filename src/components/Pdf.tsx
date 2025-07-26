@@ -18,20 +18,20 @@ function Pdf({ pdf } : { pdf: { values: Array<{ background: any; cta: any; descr
   return (
     <div className="md:w-[700px] py-10">
       <div
-        className="rounded-lg bg-cover bg-center relative p-6 flex flex-col md:flex-row justify-between items-center"
+        className="rounded-lg bg-cover bg-center relative p-16 flex flex-col md:flex-row justify-between items-center"
         style={{
           backgroundImage: `url(${background.image})`,
-          backgroundColor: background.primary_color || "#000", // fallback
+          backgroundColor: background.primary_color || "#000", 
         }}
       >
         {/* Top left icon */}
         {top_left_icon_img && (
-          <div className="absolute top-4 left-4 w-10 h-10">
+          <div className="absolute top-4 left-15 w-40 h-40">
             <Image
               src={top_left_icon_img}
               alt="icon"
-              width={40}
-              height={40}
+              width={200}
+              height={200}
               className="rounded-full"
             />
           </div>
