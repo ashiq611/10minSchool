@@ -5,10 +5,30 @@ import Instructor from "@/components/Instructor";
 import { fetchProductData } from "@/lib/fetchProduct";
 import Sections from "@/components/Sections";
 import Pdf from "@/components/Pdf";
+import Head from "next/head";
 
 export default async function page() {
   const { data } = await fetchProductData();
+
+  console.log("seo", data.seo);
+  const seo = data.seo.defaultMeta;
   return (
+    <>
+      <Head>
+        {/* Open Graph Meta Tags */}
+        {seo.map((meta: any, index: number) => (
+          <meta key={index} property={meta.value} content={meta.content} />
+        ))}
+        
+        {/* Title */}
+        <title>{seo.find((meta: any) => meta.value === "og:title")?.content || "Course Title"}</title>
+
+        {/* Meta Description */}
+        <meta name="description" content={data.seo.description} />
+
+        {/* Meta Keywords */}
+        <meta name="keywords" content={data.seo.keywords.join(", ")} />
+      </Head>
     <div className="bg-white min-h-screen font-sans text-black">
       <Navbar />
 
@@ -17,7 +37,7 @@ export default async function page() {
         title={data.title}
         description={data.description}
         media={data.media}
-      />
+        />
 
       <div className="max-w-7xl mx-auto px-4 flex flex-col">
         <Instructor instructor={data.sections[2]} />
@@ -29,5 +49,6 @@ export default async function page() {
         <Pdf pdf={data.sections[4]} />
       </div>
     </div>
+        </>
   );
 }
