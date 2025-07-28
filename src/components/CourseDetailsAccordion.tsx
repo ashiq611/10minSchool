@@ -4,6 +4,7 @@ import React from 'react'
 function CourseDetailsAccordion() {
   return (
     <div className="join join-vertical bg-base-100 md:w-[700px]">
+      <h2 className="text-xl font-bold text-gray-800 mb-6">কোর্স সম্পর্কে বিস্তারিত</h2>
   <div className="collapse collapse-arrow join-item border-base-300 border">
     <input type="radio" name="my-accordion-4" defaultChecked />
     <div className="collapse-title font-semibold text-lg">IELTS Course-টি যাদের জন্য</div>
