@@ -6,11 +6,15 @@ import { fetchProductData } from "@/lib/fetchProduct";
 import Sections from "@/components/Sections";
 import Pdf from "@/components/Pdf";
 import Head from "next/head";
+import CourseDetailsAccordion from "@/components/CourseDetailsAccordion";
+import Success from "@/components/Success";
+import CourseFeatures from "@/components/CourseFeatures";
+import CourseLearning from "@/components/CourseLearning";
 
 export default async function page() {
   const { data } = await fetchProductData();
 
-  console.log("seo", data.seo);
+  // console.log("seo", data);
   const seo = data.seo.defaultMeta;
   return (
     <>
@@ -47,6 +51,17 @@ export default async function page() {
 
         {/* Free PDF Section */}
         <Pdf pdf={data.sections[4]} />
+
+        {/*  Course Learing*/}
+        <CourseLearning />
+
+        {/* Course Details on Accordion */}
+        <CourseDetailsAccordion />
+
+        {/* sucess student */}
+        {/* <Success /> */}
+        <CourseFeatures features={data.sections[8]} />
+
       </div>
     </div>
         </>
